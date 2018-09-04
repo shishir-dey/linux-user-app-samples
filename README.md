@@ -1,5 +1,5 @@
 # Linux-System-Programming
-Concepts of Linux System programming
+Concepts of Linux system programming
 
 1. Files and the Filesystem
 
