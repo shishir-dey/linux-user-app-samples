@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
-		fprintf(stderr, "Usage: ./read filename.txt\n");
+	fprintf(stderr, "Usage: ./read filename.txt\n");
 		return 1;
 	}
 	int fd = open(argv[1], O_RDONLY);
@@ -27,6 +27,11 @@ int main(int argc, char *argv[]) {
 	while (*read_data) {
 		fprintf(stdout, "%c", *read_data);
 		read_data++;
+	}
+	int c = close(fd);
+	if (c == -1) {
+		perror("Unable to close stream \n");
+		return 1;
 	}
 	free(read_data2);
 	return 0;

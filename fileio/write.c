@@ -18,5 +18,10 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	write(fd, argv[2], atoi(argv[3]));
+	int c = close(fd);
+	if (c == -1) {
+		fprintf(stderr, "Unable to close stream\n");
+		return 0;
+	}
 	return 0;
 }
